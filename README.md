@@ -34,4 +34,4 @@ Como base de datos se utilizó H2 2.1.214. Si utiliza el usuario administrador, 
 [H2 Console](http://localhost:8080/h2-console/)
 
 ## Postman
-Link a la colleccion de [Postman] (https://api.postman.com/collections/16329113-0424caeb-16f6-440a-b84e-7d79526470ae?access_key=PMAT-01GYJHCH9HK9DASH1R9W7TRD73)
+Link a la colleccion de [Postman](https://api.postman.com/collections/16329113-0424caeb-16f6-440a-b84e-7d79526470ae?access_key=PMAT-01GYJHCH9HK9DASH1R9W7TRD73)
