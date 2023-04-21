@@ -1,6 +1,6 @@
 # REST API - Cash Online
 
-## Technologies Used
+## Tecnologias Usadas
 * [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 * [SpringBoot ](https://spring.io/)
 * [Spring Security](https://docs.spring.io/spring-security/reference/index.html)
