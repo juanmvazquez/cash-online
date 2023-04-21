@@ -106,9 +106,14 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public void delete(Long id) {
         try{
-                userRepository.deleteById(id);
+            userRepository.findById(id).ifPresentOrElse(
+                    user -> userRepository.deleteById(id),
+                    () -> {
+                        throw new UserNotFoundException(String.format("User with id: %d not found", id));
+                    });
+            userRepository.deleteById(id);
         } catch (DataAccessException e){
-            throw new UserNotFoundException(String.format("User not found with id: %s", id));
+            throw new UserNotFoundException(String.format("You are using an invalid user id: %d", id));
         }
 
     }

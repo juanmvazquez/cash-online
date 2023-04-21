@@ -4,6 +4,7 @@ import com.challengecashonline.cashonline.model.dto.RequestLoanDto;
 import com.challengecashonline.cashonline.model.dto.ResponseLoanDto;
 import com.challengecashonline.cashonline.model.entity.Loan;
 import com.challengecashonline.cashonline.model.exception.LoanNotFoundException;
+import com.challengecashonline.cashonline.model.exception.UserNotFoundException;
 import com.challengecashonline.cashonline.model.mapper.LoanMapper;
 import com.challengecashonline.cashonline.repository.LoanRepository;
 import com.challengecashonline.cashonline.repository.UserRepository;
@@ -86,11 +87,13 @@ public class LoanServiceImpl implements LoanService {
     @Transactional
     public void delete(Long id) {
         try{
-            if(loanRepository.existsById(id)){
-                loanRepository.deleteById(id);
-            }
+            loanRepository.findById(id).ifPresentOrElse(
+                    loanObtained -> loanRepository.deleteById(id),
+                    () -> {throw new LoanNotFoundException(String.format("Loan with id: %d not found", id));
+                    });
+            loanRepository.deleteById(id);
         } catch (InvalidDataAccessApiUsageException e){
-            throw new LoanNotFoundException(String.format("Loan not found with id: %s", id));
+            throw new LoanNotFoundException(String.format("You are using an invalid loan id: %d", id));
         }
     }
 }
