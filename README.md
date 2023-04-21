@@ -1,4 +1,14 @@
 # REST API - Cash Online
+
+## Technologies Used
+* [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+* [SpringBoot ](https://spring.io/)
+* [Spring Security](https://docs.spring.io/spring-security/reference/index.html)
+* [JPA](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/)
+* [H2 Data Base](https://www.h2database.com/html/main.html)
+* [Mockito](https://site.mockito.org/)
+* [JUnit](https://junit.org/junit5/)
+
 ## Propiedades del proyecto
 
 El archivo application.properties se encuentra en el directorio src/main/resources.
